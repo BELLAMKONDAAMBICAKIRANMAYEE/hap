@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Montserrat, sans-serif;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: rgb(9, 14, 23);
+	color: #ffffff;
+}
+
+svg {
+	opacity: 0;
+	position: absolute;
+}
+
+.wrapper {
+	position: relative;
+}
+
+.hero {
+	min-height: 100vh;
+	padding: clamp(1rem, 2vw, 5rem);
+	display: flex;
+	align-items: center;
+}
+
+.hero--secondary {
+	--mask: radial-gradient(circle at var(--x, 70%) var(--y, 50%), black 25%, transparent 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, #40e0d0, #9932cc, #ff1493, orange);
+	color: rgb(9, 14, 23);
+	-webkit-mask-image: var(--mask);
+	mask-image: var(--mask);
+}
+
+.hero__heading {
+	font-size: clamp(2rem, 5vw, 8rem);
+	text-transform: uppercase;
+	margin: 0;
+}
+   </style>
+  
+   
+</head>
+<body>
+	<div class="container">
+    <div class="wrapper">
+        <div class="hero">
+		
+
+            <h1 class="hero__heading">HAPPY NEW YEAR 2022</h1><br/>
+        </div>
+        <div class="hero hero--secondary" aria-hidden="true" data-hero>
+            <p class="hero__heading">HAPPY NEW YEAR 2023</p> 
+            <br/>
+			
+             
+        </div>
+    </div>
+	
+</div>
+    <script>
+        const hero = document.querySelector('[data-hero]')
+        
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e
+          const x = Math.round((clientX / window.innerWidth) * 100)
+          const y = Math.round((clientY / window.innerHeight) * 100)
+            
+            hero.style.setProperty('--x', `${x}%`)
+            hero.style.setProperty('--y', `${y}%`)
+        })
+           </script>
+           
+		   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
+		   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" 
+		   integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+
+</html>
